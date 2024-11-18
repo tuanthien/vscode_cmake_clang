@@ -22,7 +22,7 @@
       }
     },
     {
-      "name": "windows-debug-clang",
+      "name": "windows-debug-clang-cl",
       "inherits": [
         "default-debug",
         "windows-paths"
@@ -32,14 +32,15 @@
       "cacheVariables": {
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
         "CMAKE_MAKE_PROGRAM": "E:/common/ninja.exe",
-        "CMAKE_C_COMPILER": "E:/common/LLVM/bin/clang.exe",
-        "CMAKE_CXX_COMPILER": "E:/common/LLVM/bin/clang.exe",
+        "CMAKE_C_COMPILER": "E:/common/LLVM/bin/clang-cl.exe",
+        "CMAKE_CXX_COMPILER": "E:/common/LLVM/bin/clang-cl.exe",
         "CMAKE_SYSTEM_VERSION": "10.0.20348.0",
         "CMAKE_RC_COMPILER": "C:/Program Files (x86)/Windows Kits/10/bin/10.0.20348.0/x64/rc.exe",
         "CMAKE_MT": "C:/Program Files (x86)/Windows Kits/10/bin/10.0.20348.0/x64/mt.exe",
         "CMAKE_WINDOWS_KITS_10_DIR": "C:/Program Files (x86)/Windows Kits/10",
         "CMAKE_C_FLAGS": "-m64",
-        "CMAKE_CXX_FLAGS": "-m64"
+        "CMAKE_CXX_FLAGS": "-m64",
+        "EXAMPLE_WINAPI_VERSION": "0x0A00000A"
       },
       "condition": {
         "type": "equals",
