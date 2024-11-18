@@ -3,22 +3,17 @@
   "configurePresets": [
     {
       "name": "windows-debug-clang-cl",
-      "inherits": [
-        "default-debug",
-        "windows-paths"
-      ],
       "displayName": "clang-cl Windows x64 Debug",
-      "description": "Build on Windows with clang",
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/_out/build/${presetName}",
       "cacheVariables": {
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/_out/install/${presetName}",
         "CMAKE_MAKE_PROGRAM": "E:/common/ninja.exe",
         "CMAKE_C_COMPILER": "E:/common/LLVM/bin/clang-cl.exe",
         "CMAKE_CXX_COMPILER": "E:/common/LLVM/bin/clang-cl.exe",
         "CMAKE_C_FLAGS": "-m64",
         "CMAKE_CXX_FLAGS": "-m64",
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_INSTALL_PREFIX": "${sourceDir}/_out/install/${presetName}",
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
         "CPM_SOURCE_CACHE": "E:/common/cpm_cache"
       },
