@@ -1,0 +1,51 @@
+{
+  "version": 8,
+  "configurePresets": [
+    {
+      "name": "windows-paths",
+      "hidden": true,
+      "cacheVariables": {
+        "CPM_SOURCE_CACHE": "E:/common/cpm_cache"
+      }
+    },
+    {
+      "name": "default-debug",
+      "displayName": "default debug configuration",
+      "description": "Sets Ninja generator, build and install directory",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/_out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_BUILD_PARALLEL_LEVEL": "4",
+        "CMAKE_VERBOSE_MAKEFILE": "OFF",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/_out/install/${presetName}"
+      }
+    },
+    {
+      "name": "windows-debug-clang",
+      "inherits": [
+        "default-debug",
+        "windows-paths"
+      ],
+      "displayName": "windows-clang configuration",
+      "description": "Build on windows with clang",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+        "CMAKE_MAKE_PROGRAM": "E:/common/ninja.exe",
+        "CMAKE_C_COMPILER": "E:/common/LLVM/bin/clang.exe",
+        "CMAKE_CXX_COMPILER": "E:/common/LLVM/bin/clang.exe",
+        "CMAKE_SYSTEM_VERSION": "10.0.20348.0",
+        "CMAKE_RC_COMPILER": "C:/Program Files (x86)/Windows Kits/10/bin/10.0.20348.0/x64/rc.exe",
+        "CMAKE_MT": "C:/Program Files (x86)/Windows Kits/10/bin/10.0.20348.0/x64/mt.exe",
+        "CMAKE_WINDOWS_KITS_10_DIR": "C:/Program Files (x86)/Windows Kits/10",
+        "CMAKE_C_FLAGS": "-m64",
+        "CMAKE_CXX_FLAGS": "-m64"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      }
+    }
+  ]
+}
