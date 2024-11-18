@@ -10,21 +10,18 @@ target_compile_features(Example INTERFACE cxx_std_20)
 
 # Download dependencies
 include(_cmake/CPMPackageManager.cmake)
-if (NOT TARGET raylib)
-  CPMAddPackage(
-    GITHUB_REPOSITORY raysan5/raylib
-    GIT_SHALLOW    ON
-    GIT_TAG 5.5
-    OPTIONS 
-      "BUILD_SHARED_LIBS OFF"
-    SYSTEM YES
-    EXCLUDE_FROM_ALL YES
-  )
-endif()
+CPMAddPackage(
+  GITHUB_REPOSITORY raysan5/raylib
+  GIT_SHALLOW ON
+  GIT_TAG 5.5
+  OPTIONS 
+    "BUILD_SHARED_LIBS OFF"
+  SYSTEM YES
+  EXCLUDE_FROM_ALL YES
+)
 
 # specify header/source files
-target_sources(
-  Example
+target_sources(Example
   PRIVATE
     src/Example.cpp
 )
