@@ -4,19 +4,20 @@
     {
       "name": "windows-debug-clang",
       "displayName": "clang Windows x64 Debug",
-      "generator": "Visual Studio 17 2022",
+      "generator": "Ninja",
       "binaryDir": "${sourceDir}/_out/build/${presetName}",
       "cacheVariables": {
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/_out/install/${presetName}",
+        "CMAKE_MAKE_PROGRAM": "E:/common/ninja.exe",
         "CMAKE_C_COMPILER": "E:/common/LLVM/bin/clang.exe",
         "CMAKE_CXX_COMPILER": "E:/common/LLVM/bin/clang.exe",
         "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_RC_COMPILER": "C:/Program Files (x86)/Windows Kits/10/bin/10.0.20348.0/x64/rc.exe",
+        "CMAKE_MT": "C:/Program Files (x86)/Windows Kits/10/bin/10.0.20348.0/x64/mt.exe",
+        "CMAKE_C_FLAGS": "-m64",
+        "CMAKE_CXX_FLAGS": "-m64",
         "CMAKE_EXPORT_COMPILE_COMMANDS": true,
         "CPM_SOURCE_CACHE": "E:/common/cpm_cache"
-      },
-      "architecture": {
-        "value": "x64",
-        "strategy": "external"
       },
       "condition": {
         "type": "equals",
