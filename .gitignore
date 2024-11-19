@@ -1,2 +1,4 @@
 _cmake/CPM_*.cmake
 _out
+.cache
+compile_commands.json

@@ -1,0 +1,8 @@
+{
+  "cmake.copyCompileCommands": "${workspaceFolder}\\compile_commands.json",
+  "clangd.path": "E:\\common\\LLVM\\bin\\clangd.exe",
+  "clangd.arguments": [
+    "--resource-dir=E:\\common\\LLVM\\lib\\clang\\18\\",
+    "--compile-commands-dir=./"
+  ]
+}
